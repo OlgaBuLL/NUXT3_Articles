@@ -1,12 +1,15 @@
+<script setup></script>
+
 <template lang="pug">
+Head
+  Title Articles
+  Link(rel="icon" href="logo.svg") 
 div.app
-    Header
+    TheHeader
     main.container
       NuxtLayout
         NuxtPage
-    FooterComponent
+    TheFooter
 </template>
-
-<script setup></script>
 
 <style lang="scss" scoped></style>

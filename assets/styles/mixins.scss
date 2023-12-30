@@ -2,25 +2,31 @@
   max-width: 426px;
   display: grid;
   animation: appear 1.5s 100ms forwards ease-in-out;
-  & img {
+
+  img {
     @include picture;
   }
-  & h3 {
+
+  h3 {
     margin: 20px 0 30px;
   }
-  & a {
+
+  a {
     @include button($black-color, none);
+
     &:hover {
       background: $accent-color;
     }
   }
 }
+
 @keyframes appear {
   0% {
     opacity: 0;
     scale: 0.2;
     transform: translateY(-100px);
   }
+
   100% {
     opacity: 1;
     scale: 1;
@@ -34,8 +40,8 @@
 }
 
 @mixin input {
-  max-width: 353px;
-  width: 100%;
+  min-width: 250px;
+  flex: 1;
   background: none;
   outline: none;
   border: none;
@@ -45,9 +51,11 @@
   line-height: 144.444%;
   border-bottom: 1px solid $grey-color;
   padding: 0 8px;
+
   &:active {
     border-bottom: 1px solid $accent-color;
   }
+
   &::placeholder {
     color: $grey-color;
     font-size: 18px;
@@ -59,7 +67,6 @@
 @mixin button($background, $border) {
   background: $background;
   border: $border;
-
   color: $white-color;
   text-decoration: none;
   // font-size: 18px;
@@ -71,9 +78,11 @@
   cursor: pointer;
   align-self: end;
   justify-self: start;
+
   &:hover {
     background: $background;
   }
+
   @media (min-width: 320px) and (max-width: 767px) {
     font-size: calc(12px + (6 + 6 * 0.7) * ((100vw - 320px) / 1920));
   }

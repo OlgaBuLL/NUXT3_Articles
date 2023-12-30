@@ -1,3 +1,14 @@
+<script setup>
+import { onBeforeMount } from "vue";
+import { useRootStore } from "../store/store";
+
+const store = useRootStore();
+
+onBeforeMount(async () => {
+  await store.renderArticles();
+});
+</script>
+
 <template lang="pug">
 div.error(v-if="store.error")
     Error
@@ -10,17 +21,6 @@ div.cards-container(v-else)
             h3(v-if="article.title") {{ article.title }}
             NuxtLink(:to="article.link") Читать
 </template>
-
-<script setup>
-import { onBeforeMount } from "vue";
-import { useRootStore } from "../store/store";
-
-const store = useRootStore();
-
-onBeforeMount(async () => {
-  await store.renderArticles();
-});
-</script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/main.scss";

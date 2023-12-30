@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  // app: {
+  //   baseURL: "/NUXT3_Articles/",
+  // },
+
   devtools: { enabled: true },
 
   css: ["~/assets/styles/main.scss"],
